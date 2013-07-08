@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Applift</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if user_signed_in? %>
+  <div>User: <%= current_user.email %>&nbsp;<%= link_to "(Logout)", destroy_user_session_path, :method => :delete %></div>
+  <div><h1>Gadget Manager</h1></div>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>

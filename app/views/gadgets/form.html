@@ -1,0 +1,16 @@
+<% if @gadget.errors.any? %>
+<table>
+  <% @gadget.errors.full_messages.each do |errmsg| %>
+  <tr><td>* &nbsp;<%= errmsg %></td></tr>
+  <% end %>
+</table>
+<% end %>
+
+<%= form_for @gadget do |f| %>
+  <p><%= f.label :name %></p>
+  <p><%= f.text_field :name %></p>
+
+  <p><%= f.label :description %></p>
+  <p><%= f.text_area :description %></p>
+  <%= f.submit "Save" %>
+<% end %>

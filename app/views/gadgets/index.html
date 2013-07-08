@@ -1,0 +1,17 @@
+<span>Gadgets</span>
+<table border=1 cellpadding=5>
+  <% @gadgets.each do |gadget| %>
+  <tr>
+    <td><%= gadget.name %></td>
+    <td><%= gadget.description %></td>
+    <td><%= link_to "View", gadget_path(gadget) %></td>
+    <td><%= link_to "Add Image" %></td>
+    <td><%= link_to "Edit", edit_gadget_path(gadget) %></td>
+    <td><%= link_to "Delete", gadget, :method => :delete, :title => 'Delete', :confirm => "Delete this gadget?" %></td>
+   </tr>
+   <% end %>
+</table>
+
+<br />
+<%= link_to "Add New Gadget", new_gadget_path %>
+
